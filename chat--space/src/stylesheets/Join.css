@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.join {
+    background-color: rgb(7, 38, 45);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    align-items: center;
+}
+
+.join>img {
+    width: 15vmax;
+}
+
+.join-container>h2 {
+    color: rgb(187, 193, 198);
+    font-size: 4vmax;
+    width: 40vmax;
+    border-bottom: 0.2vmax solid white;
+    padding: 1vmax;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#usernameInput {
+    width: 35vmax;
+    padding: 2vmax;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    font-size: 2.2vmax;
+    margin: 2vmax;
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.join-btn {
+    width: 35vmax;
+    border-radius: 10px;
+    padding: 1.5vmax;
+    border: none;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    outline: none;
+    font-size: 2.5vmax;
+    background-color: crimson;
+    box-sizing: border-box;
+    transition: all 0.25s;
+    cursor: pointer;
+    margin-bottom: 3vmax;
+}
+
+.join-btn:hover {
+    background-color: rgb(224, 62, 95);
+}
