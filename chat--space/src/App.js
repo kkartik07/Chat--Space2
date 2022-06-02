@@ -3,6 +3,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Chat from "./components/Chat";
 import Join from './components/Join'
 
 
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/join' element={[<Join />]} />
+          <Route path='/chat' element={[<Chat />]} />
         </Routes>
       </Router>
     </div>
