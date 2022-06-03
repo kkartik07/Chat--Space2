@@ -60,7 +60,10 @@ function Chat() {
     return (
         <div className='chat'>
             <div className='chat-container'>
-                <div className='header'></div>
+                <div className='header'>
+                    <h2>ChatSpace</h2>
+                    <img src={closeIcon} />
+                </div>
                 <ReactScrollToBottom className='chat-box'>
                     {messages.map((item, i) => <Message user={item.id === id ? '' : item.user} message={item.message} classs={item.id === id ? 'right' : 'left'} />)}
                 </ReactScrollToBottom>
