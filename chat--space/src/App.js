@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/join' element={[<Join />]} />
+          <Route path='/' element={[<Join />]} />
           <Route path='/chat' element={[<Chat />]} />
         </Routes>
       </Router>

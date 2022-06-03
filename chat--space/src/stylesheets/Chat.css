@@ -8,6 +8,7 @@
 
 }
 
+
 .chat-container {
     background-color: #fff;
     height: 60%;
@@ -17,27 +18,43 @@
 .header {
     background-color: crimson;
     height: 16%;
-    border: 0.2vmax solid black;
-    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header>h2 {
+    color: rgb(255, 255, 255);
+    font-size: 1.8vmax;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 2.5vmax;
+}
+
+.header img {
+    margin: 2vmax;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.header img:hover {
+    transform: scale(1.2);
 }
 
 .chat-box {
-    border: 0.2vmax solid black;
     height: 71%;
     box-sizing: border-box;
 }
 
 .input {
     height: 13%;
+    border-top: 0.2vmax solid rgb(191, 181, 181);
     display: flex;
-    box-sizing: border-box;
 }
 
 #chatInput {
     width: 80%;
-    border: none;
+    border: 0px;
     padding: 2vmax;
-    box-sizing: border-box;
     outline: none;
     font-size: 1.8vmax;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -46,9 +63,9 @@
 
 .send-btn {
     background-color: crimson;
-    color: white;
-    border: none;
+    border: 0px;
     width: 20%;
+    height: 100%;
     transition: all 0.2s;
     cursor: pointer;
 }
