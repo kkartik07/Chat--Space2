@@ -26,8 +26,14 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('userJoined', { user: "Admin", message: `${users[socket.id]} has joined the room!` })
         socket.emit('welcome', { user: "Admin", message: `Welcome to the chat,${users[socket.id]}` })
     })
+
+    socket.on('message', () => {
+
+    })
+
     socket.on('disconnect', () => {
-        console.log('User left the chat')
+        socket.broadcast.emit('leave', { user: 'Admin', message: `${users[socket.id]} has left the chat` });
+        console.log('User has left the chat')
     })
 })
 

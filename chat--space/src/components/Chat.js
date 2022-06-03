@@ -25,9 +25,14 @@ function Chat() {
             console.log(data.user, data.message)
         })
 
+        // socket.on('disconnect', function () {
+        //     console.log('user Got disconnect!');
+        // });
         return () => {
-            socket.emit('disconnect');
-            socket.off();
+            socket.on('leave', (data) => {
+                console.log(data.user, data.message);
+                socket.off();
+            })
         }
     }, [])
 
@@ -38,7 +43,7 @@ function Chat() {
                 <div className='chat-box'></div>
                 <div className='input'>
                     <input type='text' className='chat-input' />
-                    <button className='send-btn'><img src={send} alt='send' /></button>
+                    <button onClick={send} className='send-btn'><img src={send} alt='send' /></button>
                 </div>
             </div>
         </div>
