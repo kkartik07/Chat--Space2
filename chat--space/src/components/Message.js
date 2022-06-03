@@ -1,17 +1,22 @@
 import React from 'react'
 import '../stylesheets/Message.css'
 
-function Message({ message }) {
-    return (
-        <>
-            <div className='message right'>
-                {message}
+function Message({ user, message, classs }) {
+    if (user) {
+        return (
+            <div className={`message ${classs}`}>
+                {`${user}: ${message}`}
             </div>
-            <div className='message left'>
-                {message}
+        )
+    }
+    else {
+        return (
+            <div className={`message ${classs}`}>
+                {`You: ${message}`}
             </div>
-        </>
-    )
+        )
+    }
+
 }
 
 export default Message

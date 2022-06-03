@@ -24,17 +24,17 @@ io.on('connection', (socket) => {
         users[socket.id] = user;
         console.log(`${user} has joined! `);
         socket.broadcast.emit('userJoined', { user: "Admin", message: `${users[socket.id]} has joined the room!` })
-        socket.emit('welcome', { user: "Admin", message: `Welcome to the chat,${users[socket.id]}` })
+        socket.emit('welcome', { user: "Admin", message: `Welcome to the chat, ${users[socket.id]}` })
     })
 
     socket.on('message', ({ message, id }) => {
         io.emit('sendMessage', { user: users[id], message: message, id: id })
     })
 
-    socket.on('disconnect', () => {
-        socket.broadcast.emit('leave', { user: 'Admin', message: `${users[socket.id]} has left the chat` });
-        console.log('User has left the chat')
-    })
+    // socket.on('disconnect', () => {
+    //     socket.emit('leave', { user: users[id], message: `${users[socket.id]} has left the chat` });
+    //     console.log('User has left the chat')
+    // })
 })
 
 server.listen(port, () => {
