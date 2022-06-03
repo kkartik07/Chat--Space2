@@ -33,7 +33,7 @@
     box-sizing: border-box;
 }
 
-.chat-input {
+#chatInput {
     width: 80%;
     border: none;
     padding: 2vmax;
