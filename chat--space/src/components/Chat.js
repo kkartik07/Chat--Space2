@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import '../stylesheets/Chat.css'
 import { user } from './Join.js'
 import socketIO from 'socket.io-client'
 import sendLogo from '../images/send.png'
 import closeIcon from '../images/closeIcon.png'
 import Message from './Message'
-import ReactScrollToBottom from 'react-scroll-to-bottom'
+import ScrollToBottom from 'react-scroll-to-bottom'
 
-const ENDPOINT = 'http://localhost:4500'
+
+const ENDPOINT = 'https://chat-spacee.herokuapp.com/'
 
 let socket;
 function Chat() {
@@ -19,6 +20,11 @@ function Chat() {
         document.getElementById('chatInput').value = "";
 
     }
+
+
+
+    //////////////////////////
+
 
     useEffect(() => {
         socket = socketIO(ENDPOINT, { transports: ['websocket'] })
@@ -60,22 +66,32 @@ function Chat() {
     }, [messages])
 
     return (
+
+
         <div className='chat'>
-            <div className='chat-container'>
-                <div className='header'>
-                    <h2>ChatSpace</h2>
-                    <a href='/'> <img src={closeIcon} alt='close' /></a>
-                </div>
-                <ReactScrollToBottom className='chat-box'>
-                    {messages.map((item) => <Message user={item.id === id ? '' : item.user} message={item.message} classs={item.id === id ? 'right' : 'left'} />)}
-                </ReactScrollToBottom>
-                <div className='input'>
-                    <input onKeyPress={(evt => evt.key === 'Enter' ? send() : null)} type='text' id='chatInput' />
-                    <button onClick={send} className='send-btn'><img src={sendLogo} alt='send' /></button>
-                </div>
+            <div className='header'>
+                <h2>ChatSpace</h2>
+                <a href='/'> <img src={closeIcon} alt='close' /></a>
             </div>
-        </div>
+
+            <div className='chat-body'>
+
+                <ScrollToBottom className='chat-box'>
+                    {messages.map((item) => <Message user={item.id === id ? '' : item.user} message={item.message} classs={item.id === id ? 'right' : 'left'} />)}
+                </ScrollToBottom>
+
+
+            </div >
+
+            <div className='typespace'>
+                <input onKeyPress={(evt => evt.key === 'Enter' ? send() : null)} type='text' id='chatInput' placeholder='Type something...' className='typespace' />
+                <button onClick={send} className='send-btn'><img src={sendLogo} alt='send' /></button>
+            </div>
+
+        </div >
+
+
     )
 }
 
-export default Chat
+export default Chat;
