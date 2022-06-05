@@ -15,11 +15,11 @@
 }
 
 .join-container>img {
-    width: 15vmax;
+    width: 13vmax;
 }
 
 .join-container>h2 {
-    color: rgb(187, 193, 198);
+    color: rgb(6, 53, 84);
     font-size: 4vmax;
     width: 40vmax;
     border-bottom: 0.2vmax solid white;
@@ -50,13 +50,77 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     outline: none;
     font-size: 2.5vmax;
-    background-color: crimson;
+    background-color: rgb(57, 21, 125);
     box-sizing: border-box;
-    transition: all 0.25s;
+    transition: all 0.2s cubic-bezier(0.79, 0.14, 0.15, 0.86);
     cursor: pointer;
     margin-bottom: 3vmax;
 }
 
 .join-btn:hover {
-    background-color: rgb(224, 62, 95);
+    background-color: rgb(27, 36, 114);
+}
+
+
+/* ............................... */
+
+/* glass effect join form */
+
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+
+.join {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: url(https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80);
+    background: #578ba07a;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 35px 40px;
+    border-radius: 4px;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0px 12px 31px #ffffff52, 0px 36px 31px #000000a1;
+    animation: join 0.8s ease;
+}
+
+@keyframes join {
+    0% {
+        transform: translateY(-10%) scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.join:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: url(https://images.unsplash.com/photo-1506452305024-9d3f02d1c9b5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80);
+    width: 100%;
+    z-index: -1;
+    background-size: 200%;
+    background-position: 28%, 83%;
+    filter: blur(24px);
+    background-repeat: no-repeat;
+    opacity: 0.8;
 }
