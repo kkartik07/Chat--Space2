@@ -1,5 +1,26 @@
 * {
   margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background-color: rgb(172, 214, 248);
+  background: url(https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.app-body {
+  display: flex;
+  background-color: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(20px);
+  height: 90vh;
+  width: 90vw;
+  border-radius: 10px;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-aspect-ratio: 7/10) {
