@@ -14,13 +14,13 @@ function Join() {
     const [name, setName] = useState("");
     return (
 
-        <div className='join'>
-            <div className='join-container'>
+        <div className='join join'>
+            <div className='join-container join-container'>
                 <img src={Logo} alt='logo' />
                 <h2>ChatSpace</h2>
-                <input onChange={(e) => setName(e.target.value)} placeholder='Enter Your Username' type='text' id='usernameInput' />
+                <input onChange={(e) => setName(e.target.value)} placeholder='Enter Your Username' type='text' id='usernameInput' classname='input' />
                 <Link to='/chat' onClick={(evt) => name ? null : evt.preventDefault()}>
-                    <button className='join-btn' onClick={sendUser} type='submit'>Join</button>
+                    <button className='join-btn join-signin-btn' onClick={sendUser} type='submit'>Join</button>
                 </Link>
             </div>
         </div>
