@@ -6,22 +6,27 @@ import sendLogo from '../images/send.png'
 import closeIcon from '../images/closeIcon.png'
 import Message from './Message'
 import ScrollToBottom from 'react-scroll-to-bottom'
-
+import Picker from 'emoji-picker-react'
 
 const ENDPOINT = 'https://chat-spacee.herokuapp.com/'
 
 let socket;
 function Chat() {
     const [id, setId] = useState("");
-    const [messages, setMessages] = useState([])
+    const [messages, setMessages] = useState([]);
+    const [input, setInput] = useState('');
+    const [showPicker, setShowPicker] = useState(false);
+
+    const onEmojiClick = (event, emojiObject) => {
+        setInput(input => input + emojiObject.emoji);
+        setShowPicker(false);
+    };
+
     const send = () => {
         const message = document.getElementById('chatInput').value;
         socket.emit('message', { message, id });
-        document.getElementById('chatInput').value = "";
-
+        setInput("");
     }
-
-
 
     //////////////////////////
 
@@ -83,8 +88,29 @@ function Chat() {
 
             </div >
 
-            <div className='typespace'>
-                <input onKeyPress={(evt => evt.key === 'Enter' ? send() : null)} type='text' id='chatInput' placeholder='Type something...' className='typespace' />
+            {/* //////////// */}
+
+
+            {/* ////////////////// */}
+
+            <div className="picker-container">
+                <img
+                    className="emoji-icon"
+                    src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
+                    onClick={() => setShowPicker(val => !val)}
+                    alt='emoji-icon' />
+                {showPicker && <Picker
+                    onEmojiClick={onEmojiClick}
+                    className='picker'
+                />}
+
+                <input
+                    className="input-style"
+                    value={input}
+                    onKeyPress={(evt => evt.key === 'Enter' ? send() : null)}
+                    onChange={e => { setInput(e.target.value); }}
+                    type='text' id='chatInput'
+                />
                 <button onClick={send} className='send-btn'><img src={sendLogo} alt='send' /></button>
             </div>
 
