@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../stylesheets/Chat.css'
 import { user } from './Join.js'
 import socketIO from 'socket.io-client'
@@ -88,32 +88,29 @@ function Chat() {
 
             </div >
 
-            {/* //////////// */}
-
-
-            {/* ////////////////// */}
-
             <div className="picker-container">
-                <img
-                    className="emoji-icon"
-                    src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
-                    onClick={() => setShowPicker(val => !val)}
-                    alt='emoji-icon' />
+
                 {showPicker && <Picker
                     onEmojiClick={onEmojiClick}
                     className='picker'
+                    pickerStyle={{ width: '100%' }}
                 />}
-
-                <input
-                    className="input-style"
-                    value={input}
-                    onKeyPress={(evt => evt.key === 'Enter' ? send() : null)}
-                    onChange={e => { setInput(e.target.value); }}
-                    type='text' id='chatInput'
-                />
-                <button onClick={send} className='send-btn'><img src={sendLogo} alt='send' /></button>
+                <div className='input-area'>
+                    <img
+                        className="emoji-icon"
+                        src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
+                        onClick={() => setShowPicker(val => !val)}
+                        alt='emoji-icon' />
+                    <input
+                        className="input-style"
+                        value={input}
+                        onKeyPress={(evt => evt.key === 'Enter' ? send() : null)}
+                        onChange={e => { setInput(e.target.value); }}
+                        type='text' id='chatInput'
+                    />
+                    <button onClick={send} className='send-btn'><img src={sendLogo} alt='send' /></button>
+                </div>
             </div>
-
         </div >
 
 
