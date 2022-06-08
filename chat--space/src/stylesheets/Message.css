@@ -3,7 +3,6 @@
     width: 50%;
     padding: 0.7vmax;
     margin: 1.5vmax;
-    border-radius: 0.4vmax;
     display: inline-block;
     word-wrap: break-word;
     word-break: break-word;
@@ -15,11 +14,18 @@
 .right {
     float: right;
     display: flex;
+    border-radius: 1.5vmax 1.5vmax 0 1.5vmax;
     background-color: rgb(118, 91, 192);
     color: white;
+    box-shadow: 3px 3px 2px 1px rgb(158, 143, 211);
+
 }
 
 .left {
     float: left;
+    color: black;
+    border-radius: 0 1.5vmax 1.5vmax 1.5vmax;
     background-color: rgb(198, 167, 221);
+    box-shadow: 3px 3px 3px 1px rgb(212, 188, 230);
+
 }
