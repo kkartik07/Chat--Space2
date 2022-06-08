@@ -53,19 +53,16 @@
     border: none;
     padding: 1vmax;
     width: 90%;
-}
-
-.typespace {
-    display: flex;
+    height: 100%;
 }
 
 .send-btn {
     transition: all 0.2s;
     cursor: pointer;
-    height: 100%;
-    border-radius: 0 0px 7px 0;
+    border-radius: 0 0 7px 0;
     border: none;
     width: 10%;
+    height: 100%;
     background-color: rgb(116, 77, 236);
 }
 
@@ -94,4 +91,37 @@
     background-position: center;
     padding: 30px;
     overflow-y: auto;
+}
+
+/* emoji */
+
+.picker-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.emoji-icon {
+    width: 40px;
+    margin: 10px;
+    transition: all 0.2s;
+}
+
+.emoji-icon:hover {
+    cursor: pointer;
+    width: 42px;
+}
+
+
+.input-style {
+    padding: 7px 10px 7px 10px;
+    width: calc(100% - 40px);
+    border-radius: 3px;
+    border: 1px solid #999;
+}
+
+
+.input-area {
+    display: flex;
+    width: 100%;
 }
