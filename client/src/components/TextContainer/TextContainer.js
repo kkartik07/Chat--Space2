@@ -8,23 +8,22 @@ const TextContainer = ({ users }) => (
   <div className="textContainer">
     <div>
       <h1>Realtime Chat Application <span role="img" aria-label="emoji">💬</span></h1>
-      <h2>Created with React, Express, Node and Socket.IO <span role="img" aria-label="emoji">❤️</span></h2>
-      <h2>Try it out right now! <span role="img" aria-label="emoji">⬅️</span></h2>
     </div>
     {
       users
         ? (
           <div>
-            <h1>People currently chatting:</h1>
+            <h2>People currently in the room:</h2>
+            <hr></hr>
             <div className="activeContainer">
-              <h2>
+              <ul>
                 {users.map(({name}) => (
-                  <div key={name} className="activeItem">
-                    {name}
+                  <li key={name} className="activeItem">
+                    - {name}
                     <img alt="Online Icon" src={onlineIcon}/>
-                  </div>
+                  </li>
                 ))}
-              </h2>
+              </ul>
             </div>
           </div>
         )
