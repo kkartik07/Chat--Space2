@@ -1,6 +1,6 @@
 # Realtime Chat Application
 
-### [Live Site](https://realtime-chat-application.netlify.com)
+### [Live Site](https://chatspace2.netlify.app/)
 
 ## Backend is running at [](chat-space2-production.up.railway.app)
 
